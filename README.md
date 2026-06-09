@@ -1,8 +1,10 @@
+# Author: Oliver Abinader
+
+
 # Genome Interval List Generator
 
 A collection of workflows for generating **standard and non-standard genomic interval lists** from reference genome annotations. These interval lists are commonly used in RNA-seq preprocessing, rRNA depletion strategies, and targeted sequence filtering workflows.
 
----
 
 ## Overview
 
@@ -28,7 +30,6 @@ A comprehensive interval representation that includes:
 * CDS, UTR, intronic, and intergenic regions
 * Custom gene sets (e.g., ribosomal or mitochondrial targets)
 
----
 
 ## Inputs Required
 
@@ -40,7 +41,6 @@ All workflows require the following reference files:
 * Genome annotation file (`.gff` or `.gtf`)
 * Optional gene list file (for targeted depletion sets)
 
----
 
 # Standard Interval List Generation
 
@@ -75,7 +75,6 @@ cat interval_list | grep -v "@" | awk '{print $5}' | sort | uniq -c
 * If gene names are present → **Non-standard interval list**
 * If no gene names are present → **Standard interval list**
 
----
 
 # Non-Standard Interval List Generation
 
@@ -99,7 +98,6 @@ NVG
 i500
 ```
 
----
 
 ### Workflow
 
@@ -111,7 +109,6 @@ bash scripts/generate_nonstandard_intervals.sh \
     <path_to_gene_list>
 ```
 
----
 
 ### Outputs
 
@@ -135,7 +132,6 @@ This file should be renamed to:
 genomic.all.interval_list
 ```
 
----
 
 ### Validation Checks
 
@@ -147,7 +143,6 @@ cat missed-genes.txt
 
 This file should ideally be empty.
 
----
 
 2. Verify completeness:
 
@@ -164,7 +159,6 @@ Expected:
 non-standard > standard
 ```
 
----
 
 ## Interpretation
 
@@ -181,7 +175,6 @@ Used when:
 * Gene-level depletion is required
 * Custom gene sets are targeted
 
----
 
 ## Directory Recommendation
 
@@ -200,7 +193,6 @@ OR in a structured reference folder:
 
 This ensures reproducibility and consistent pathing across pipelines.
 
----
 
 ## Notes
 
