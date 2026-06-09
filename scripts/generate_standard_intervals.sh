@@ -13,7 +13,7 @@ fi
 
 echo "Generating STANDARD interval list..."
 
-java -Xmx40g -jar interval_tool.jar \
+java -Xmx40g -jar /path/to/interval-tools.jar \
   GffFeaturesToIntervalList \
   -g "$GFF" \
   -r "$FASTA" \
